@@ -24,6 +24,7 @@ export default function LoginPage() {
       alert('wrong credentials');
     }
   }
+  
 
   if (redirect) {
     return <Navigate to={'/'} />

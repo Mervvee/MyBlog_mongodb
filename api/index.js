@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
-mongoose.connect('mongodb+srv://blog:RD8paskYC8Ayj09u@cluster0.pflplid.mongodb.net/?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://iregozmerve:a8g9114711@blogmongo.vv2uexh.mongodb.net/?retryWrites=true&w=majority&appName=BlogMongo');
 
 app.post('/register', async (req,res) => {
   const {username,password} = req.body;
@@ -135,4 +135,5 @@ app.get('/post/:id', async (req, res) => {
 })
 
 app.listen(4000);
-//
+//mongodb+srv://iregozmerve:<password>@blogmongo.vv2uexh.mongodb.net/?retryWrites=true&w=majority&appName=BlogMongo
+//mongodb+srv://iregozmerve:a8g9114711@blogmongo.vv2uexh.mongodb.net/?retryWrites=true&w=majority&appName=BlogMongo
