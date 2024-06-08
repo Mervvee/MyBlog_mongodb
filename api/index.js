@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
-mongoose.connect('mongodb+srv://iregozmerve:a8g9114711@blogmongo.vv2uexh.mongodb.net/?retryWrites=true&w=majority&appName=BlogMongo');
+mongoose.connect('mongodb+srv://iregozmerve:ILiLfKhGuni2rI0C@blogmongodb.szfb9r6.mongodb.net/?retryWrites=true&w=majority&appName=BlogMongoDB');
 
 app.post('/register', async (req,res) => {
   const {username,password} = req.body;
@@ -90,7 +90,7 @@ app.post('/post', uploadMiddleware.single('file'), async (req,res) => {
 
 app.put('/post',uploadMiddleware.single('file'), async (req,res) => {
   let newPath = null;
-  if (req.file) {
+  if (req.file) { 
     const {originalname,path} = req.file;
     const parts = originalname.split('.');
     const ext = parts[parts.length - 1];
@@ -125,7 +125,7 @@ app.get('/post', async (req,res) => {
       .populate('author', ['username'])
       .sort({createdAt: -1})
       .limit(20)
-  );
+  ); 
 });
 
 app.get('/post/:id', async (req, res) => {
@@ -137,3 +137,6 @@ app.get('/post/:id', async (req, res) => {
 app.listen(4000);
 //mongodb+srv://iregozmerve:<password>@blogmongo.vv2uexh.mongodb.net/?retryWrites=true&w=majority&appName=BlogMongo
 //mongodb+srv://iregozmerve:a8g9114711@blogmongo.vv2uexh.mongodb.net/?retryWrites=true&w=majority&appName=BlogMongo
+
+//ILiLfKhGuni2rI0C
+//mongodb+srv://iregozmerve:ILiLfKhGuni2rI0C@blogmongodb.szfb9r6.mongodb.net/?retryWrites=true&w=majority&appName=BlogMongoDB
